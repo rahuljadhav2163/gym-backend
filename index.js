@@ -14,7 +14,7 @@ app.use(express.json());
 
 const connectDB = async () => {
   try {
-    const conn = await connect(process.env.MONGODB_URL);
+    const conn = await connect("mongodb+srv://rahuljadhav7057461164:rahul2163@cluster0.yhice.mongodb.net/Reg");
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`Error: ${error.message}`);
