@@ -3,14 +3,13 @@ import mongoose from 'mongoose';
 const WorkoutSchema = new mongoose.Schema({
   type: {
     type: String,
-    required: true,
   },
   workout: {
     type: String,
     required: true,
   },
   duration: {
-    type: Number, 
+    type: String, 
     required: true,
   },
   date: {
