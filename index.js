@@ -2,7 +2,7 @@ import express from "express";
 import { connect } from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";  
-import { createMember,getAllUsers, loginMember } from "./controller/user.js";
+import { createMember,deleteUser,getAllUsers, loginMember } from "./controller/user.js";
 import { loginadmin, postadmin } from "./controller/admin.js";
 import { addworkout, getworkout } from "./controller/workout.js";
 import User from "./model/user.js";
@@ -30,12 +30,12 @@ app.get('/', (req, res) => {
 app.post('/api/createmember', createMember )
 app.get('/api/getallusers', getAllUsers )
 app.post('/api/loginuser', loginMember)
-
+app.delete('/api/deluser/:id', deleteUser)
 
 app.post('/api/admin-register', postadmin )
 app.post('/api/adminlogin', loginadmin )
 app.post('/api/addworkout', addworkout )
-app.post('/api/getworkouts/:phone', getworkout )
+app.get('/api/getworkouts/:phone', getworkout )
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
